@@ -2,10 +2,14 @@ import React from "react";
 import { Button } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import {
+  BulbOutlined,
   CalendarOutlined,
+  EditOutlined,
   PlayCircleOutlined,
   SmileOutlined,
+  TeamOutlined,
   TrophyOutlined,
+  VideoCameraOutlined,
 } from "@ant-design/icons";
 
 function HomePage() {
@@ -18,13 +22,13 @@ function HomePage() {
             🎉 BEPUL O'QUV LAGERI 🎉
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            <span className="text-yellow-300">Qiziqarli</span> kontentlar <br />
-            yaratishni o'rganamiz!
+            <span className="text-yellow-300">Qiziq</span> kontentlar <br />
+            qanday tayorlanar ekan?
           </h1>
           <div className="bg-white/20 backdrop-blur-sm rounded-xl p-6 mb-8 max-w-2xl mx-auto">
             <p className="text-xl font-medium">
-              "Milliy o'yinlarimiz asosida video, animatsiya va qiziqarli
-              postlar yaratishni o'rganamiz!"
+              Milliy qadriyatlar asosida zamonaviy kontent yaratuvchilar uchun
+              noyob imkoniyat!
             </p>
           </div>
           <Link to="/register">
@@ -32,10 +36,10 @@ function HomePage() {
               onClick={() => navigate("/register")}
               type="primary"
               size="large"
-              className="bg-yellow-400 hover:bg-yellow-500 text-purple-800 font-bold h-14 px-10 rounded-full text-lg shadow-lg border-0"
+              className="bg-yellow-400 hover:bg-yellow-500 text-purple-800 font-bold h-14 px-10 rounded-full text-lg shadow-lg border-0 max-[480px]:w-[80%]"
               icon={<SmileOutlined />}
             >
-              Qatnashish uchun ro'yxatdan o'tish
+              Ro'yxatdan o'tish
             </Button>
           </Link>
         </div>
@@ -71,10 +75,26 @@ function HomePage() {
                     Nimalar o'rganamiz?
                   </h3>
                   <ul className="text-gray-600 text-lg space-y-2">
-                    <li>🎬 Qiziqarli videolar yasash</li>
-                    <li>✏️ Animatsiya chizish</li>
-                    <li>📱 Instagram uchun postlar</li>
-                    <li>🎭 Milliy o'yinlar haqida hikoyalar</li>
+                    <li className="flex items-start">
+                      <VideoCameraOutlined className="text-green-500 mr-2 mt-1" />
+                      Milliy o'yinlarga asoslangan multimedia mahsulotlarini
+                      yaratish
+                    </li>
+                    <li className="flex items-start">
+                      <EditOutlined className="text-blue-500 mr-2 mt-1" />
+                      Animatsion video tayyorlash: senariy, dizayn, ovoz va
+                      montaj
+                    </li>
+                    <li className="flex items-start">
+                      <BulbOutlined className="text-yellow-500 mr-2 mt-1" />
+                      Zamonaviy va milliy ruhdagi kreativ kontent ishlab chiqish
+                      texnikalari
+                    </li>
+                    <li className="flex items-start">
+                      <TeamOutlined className="text-purple-500 mr-2 mt-1" />
+                      Amaliy mashg'ulotlar va tajribali mutaxassislar bilan
+                      muloqot
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -86,15 +106,15 @@ function HomePage() {
       <section className="py-12 px-4 bg-gradient-to-r from-yellow-100 to-orange-100">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-purple-800 mb-8">
-            Lagerda nimalar bo'ladi?
+            Kimlar uchun?
           </h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
             {[
-              { icon: "🎨", text: "Rasmlar" },
-              { icon: "🎥", text: "Videolar" },
-              { icon: "🎭", text: "O'yinlar" },
-              { icon: "🏆", text: "Mukofotlar" },
+              { icon: "🎥", text: "Kontent yaratuvchilar" },
+              { icon: "🎨", text: "Dizayner va animatorlar" },
+              { icon: "📷", text: "Bloggerlar, jurnalistlar" },
+              { icon: "🏆", text: "Talabalar va ijodkor yoshlar" },
             ].map((item, index) => (
               <div
                 key={index}
@@ -106,16 +126,7 @@ function HomePage() {
             ))}
           </div>
 
-          <div className="bg-white rounded-xl p-6 shadow-lg inline-block max-w-md">
-            <div className="text-5xl mb-4">🏅</div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">
-              Eng yaxshi ishlar uchun sovg'alar!
-            </h3>
-            <p className="text-gray-600">
-              Har kuni eng yaxshi ishlarni qilgan bolalar sovg'alar bilan
-              taqdirlanadi!
-            </p>
-          </div>
+         
         </div>
       </section>
 
@@ -131,7 +142,7 @@ function HomePage() {
               onClick={() => navigate("/register")}
               type="primary"
               size="large"
-              className="bg-yellow-400 hover:bg-yellow-500 text-purple-800 font-bold h-14 px-10 rounded-full text-lg shadow-lg"
+              className="bg-yellow-400 hover:bg-yellow-500 text-purple-800 font-bold h-14 px-10 rounded-full text-lg shadow-lg max-[480px]:w-[90%] max-[480px]:w-[90%]"
               icon={<TrophyOutlined />}
             >
               Men ham qatnashmoqchiman!

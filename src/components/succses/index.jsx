@@ -1,6 +1,5 @@
 import React from "react";
 import { CheckOutlined } from "@ant-design/icons";
-import { Button } from "antd";
 import { useNavigate } from "react-router-dom";
 function SuccsesComponents() {
   const navigate = useNavigate();
