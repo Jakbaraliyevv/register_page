@@ -82,7 +82,7 @@ function HomePage() {
                   <div className="flex items-center justify-between gap-[30px]">
                     <div className="shadow-blue-200 shadow-md h-[350px]">
                       <div>
-                        <img src={svg1} alt="" />
+                        <img src={svg1} className="w-full h-[50%]" alt="" />
                       </div>
                       <p className="  text-center">
                         Milliy o'yinlarga asoslangan multimedia mahsulotlarini
@@ -91,7 +91,7 @@ function HomePage() {
                     </div>
                     <div className="shadow-blue-200 shadow-md h-[350px]">
                       <div>
-                        <img src={svg2} alt="" />
+                        <img src={svg2} className="w-full h-[50%]" alt="" />
                       </div>
                       <p className="p-2 text-center">
                         Animatsion video tayyorlash: senariy, dizayn, ovoz va
@@ -100,7 +100,7 @@ function HomePage() {
                     </div>
                     <div className="shadow-blue-200 shadow-md h-[350px]">
                       <div>
-                        <img src={svg3} alt="" />
+                        <img src={svg3} className="w-full h-[50%]" alt="" />
                       </div>
                       <p className="p-2 text-center">
                         Zamonaviy va milliy ruhdagi kreativ kontent ishlab
