@@ -7,12 +7,13 @@ import {
   ReadOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { Button, Input, DatePicker, message } from "antd";
+import { Button, Input, DatePicker, message, notification } from "antd";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function FormComponents() {
   const navigate = useNavigate();
+  const [filess, setFiless] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     surename: "",
@@ -25,7 +26,7 @@ function FormComponents() {
     phone_number: "",
   });
 
-  console.log(formData, "datatttattatat");
+  console.log(formData, "shhchdhhj");
 
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -70,23 +71,38 @@ function FormComponents() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
 
+    if (!file) {
+      setFiless(true);
+      console.log("ishlaidd");
+    } else {
+      setFile(false);
+    }
+
+    // Barcha formData maydonlari va fayl to‘ldirilganligini tekshirish
+    const isFormIncomplete =
+      Object.values(formData).some((value) => value.trim() === "") || !file;
+
+    if (isFormIncomplete) {
+      notification.error({
+        message:
+          "Iltimos, barcha maydonlarni to‘ldiring, jumladan faylni ham yuklang!",
+      });
+      return;
+    }
+
+    // Formani yuborish jarayoni
+    setLoading(true);
     try {
       const data = new FormData();
       Object.keys(formData).forEach((key) => {
-        if (formData[key]) {
-          data.append(key, formData[key]);
-        }
+        data.append(key, formData[key]);
       });
-
-      if (file) {
-        data.append("file", file);
-      }
+      data.append("file", file);
 
       const response = await axios.post(
         // "http://195.158.4.220:1212/register/",
-        "https://api.infinite-co.uz/register/",
+           "https://api.infinite-co.uz/register/",
         data,
         {
           headers: {
@@ -96,7 +112,6 @@ function FormComponents() {
       );
 
       if (response?.data?.success) {
-        console.log(response?.data?.success, "xdxdx");
         navigate("/succses");
         message.success("Ro'yxatdan muvaffaqiyatli o'tdingiz!");
         setFormData({
@@ -108,14 +123,11 @@ function FormComponents() {
           district: "",
           about: "",
           gender: "",
-          age: "",
+          phone_number: "",
         });
         setFile(null);
-      } else {
-        message.error(response.data.message || "Xatolik yuz berdi!");
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
       message.error("Xatolik yuz berdi! Iltimos, qayta urunib ko'ring.");
     } finally {
       setLoading(false);
@@ -198,12 +210,17 @@ function FormComponents() {
                 </label>
                 <div className="flex items-center border border-gray-300 rounded-lg hover:border-purple-400 focus-within:border-purple-500 focus-within:ring-1 focus-within:ring-purple-500">
                   <span className="pl-3 text-gray-500 font-medium">+998</span>
-                  <Input
+                  <input
                     name="phone_number"
                     value={formData.phone_number}
-                    onChange={handleInputChange}
-                    className="flex-1 p-3 border-0 focus:ring-0 max-[450px]:placeholder:text-[13px]"
-                    type="tel"
+                    onChange={(e) => {
+                      // Faqat raqamlarga ruxsat berish
+                      e.target.value = e.target.value.replace(/[^0-9]/g, "");
+                      handleInputChange(e); // Agar sizda onChange handler bor bo'lsa
+                    }}
+                    className="flex-1 p-3 border-none outline-none focus:ring-0 max-[450px]:placeholder:text-[13px] rounded-lg"
+                    type="tel" // type="tel" mobil qurilmalarda raqamli klaviaturani ochadi
+                    inputMode="numeric" // Raqamli klaviatura uchun qo'shimcha optimizatsiya
                     pattern="[0-9]{9}"
                     maxLength="9"
                     placeholder="90 123 45 67"
@@ -240,6 +257,37 @@ function FormComponents() {
                   className="w-full p-3 border border-gray-300 rounded-lg hover:border-purple-400 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition max-[450px]:placeholder:text-[13px]"
                   placeholder="Tug'ilgan yilingizni tanlang"
                   required
+                  // 1. Klaviaturada faqat raqamlar, Backspace, Delete, Arrow tugmalariga ruxsat berish
+                  onKeyDown={(e) => {
+                    const allowedKeys = [
+                      "0",
+                      "1",
+                      "2",
+                      "3",
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "8",
+                      "9",
+                      "Backspace",
+                      "Delete",
+                      "ArrowLeft",
+                      "ArrowRight",
+                      "Tab",
+                    ];
+                    if (!allowedKeys.includes(e.key)) {
+                      e.preventDefault();
+                    }
+                  }}
+                  // 2. Inputni "text" turida qo'llash (number type bilan muammo bo'lmasligi uchun)
+                  inputRender={(props) => (
+                    <input
+                      {...props}
+                      type="text" // type="text" deb qo'yamiz, lekin raqamlarni filterlaymiz
+                      inputMode="numeric" // Mobil qurilmalarda raqamli klaviatura ochilishi uchun
+                    />
+                  )}
                 />
               </div>
             </div>
@@ -321,6 +369,11 @@ function FormComponents() {
                     {file ? file.name : "Faylni tanlash"}
                   </button>
                 </label>
+                {filess ? (
+                  <h2 className="text-red-500 mt-4">Iltimos fileni yuklang!</h2>
+                ) : (
+                  ""
+                )}
               </div>
             </div>
 
