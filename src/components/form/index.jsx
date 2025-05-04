@@ -220,8 +220,10 @@ import {
 } from "@ant-design/icons";
 import { Button, Input, DatePicker, message } from "antd";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function FormComponents() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     surename: "",
@@ -231,7 +233,7 @@ function FormComponents() {
     district: "",
     about: "",
     gender: "",
-    age: "",
+    phone_number: "",
   });
 
   console.log(formData, "datattatatat");
@@ -254,6 +256,22 @@ function FormComponents() {
   };
 
   const handleFileChange = (e) => {
+    const { name, value } = e.target;
+    if (name === "phone_number") {
+      // Remove all non-digit characters
+      const digitsOnly = value.replace(/\D/g, "");
+      // Limit to 9 characters (Uzbek phone numbers without country code)
+      setFormData({
+        ...formData,
+        [name]: digitsOnly.slice(0, 9),
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
+
     const selectedFile = e.target.files[0];
     if (selectedFile) {
       if (selectedFile.size > 10 * 1024 * 1024) {
@@ -294,7 +312,7 @@ function FormComponents() {
       }
 
       const response = await axios.post(
-        "https://online.raqamliavlod.uz/register/",
+        "http://195.158.4.220:1212/register/",
         data,
         {
           headers: {
@@ -303,7 +321,9 @@ function FormComponents() {
         }
       );
 
-      if (response.data.success) {
+      if (response?.data?.success) {
+        console.log(response?.data, "response");
+        navigate("/succses")
         message.success("Ro'yxatdan muvaffaqiyatli o'tdingiz!");
         setFormData({
           name: "",
@@ -400,17 +420,22 @@ function FormComponents() {
               </div>
               <div>
                 <label className="block text-gray-700 font-medium mb-2 max-[500px]:text-[15px]">
-                  Yosh
+                  Telefon raqam
                 </label>
-                <Input
-                  name="age"
-                  value={formData.age}
-                  onChange={handleInputChange}
-                  className="w-full p-3 border border-gray-300 rounded-lg hover:border-blue-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition max-[450px]:placeholder:text-[13px]"
-                  type="number"
-                  placeholder="Yoshingizni kiriting"
-                  required
-                />
+                <div className="flex items-center border border-gray-300 rounded-lg hover:border-blue-400 focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500">
+                  <span className="pl-3 text-gray-500 font-medium">+998</span>
+                  <Input
+                    name="phone_number"
+                    value={formData.phone_number}
+                    onChange={handleInputChange}
+                    className="flex-1 p-3 border-0 focus:ring-0 max-[450px]:placeholder:text-[13px]"
+                    type="tel"
+                    pattern="[0-9]{9}"
+                    maxLength="9"
+                    placeholder="90 123 45 67"
+                    required
+                  />
+                </div>
               </div>
             </div>
 
