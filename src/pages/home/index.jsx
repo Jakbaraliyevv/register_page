@@ -155,7 +155,7 @@ function HomePage() {
             O'rinlar soni cheklangan!
           </h2>
           <p className="text-base md:text-xl mb-6 md:mb-8">
-            Tezroq ro'yxatdan o'ting va qiziqarli oromgoh o'z o'rningizni band
+            Tezroq ro'yxatdan o'ting va qiziqarli oromgohda o'z o'rningizni band
             qiling!
           </p>
           <Link to="/register">

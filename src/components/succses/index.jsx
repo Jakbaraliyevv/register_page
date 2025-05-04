@@ -12,7 +12,7 @@ function SuccsesComponents() {
             <CheckOutlined className="text-green-600 w-full h-full flex items-center justify-center" />
           </div>
         </div>
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">
+        <h2 className="text-2xl font-bold text-center text-gray-800 mb-4 max-[500px]:text-xl">
           Ro'yxatdan o'tish muvaffaqiyatli yakunlandi!
         </h2>
         <p className="text-center text-gray-600 mb-6">
