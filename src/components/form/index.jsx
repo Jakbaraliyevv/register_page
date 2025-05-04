@@ -331,7 +331,7 @@ function FormComponents() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <FileWordOutlined className="text-blue-500 text-xl" />
-                <h2 className="text-xl font-semibold text-gray-800 max-[500px]:text-[15px]">
+                <h2 className="font-medium text-gray-700 max-[500px]:text-[15px]">
                   Portfolio
                 </h2>
               </div>
@@ -366,7 +366,7 @@ function FormComponents() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <ExclamationCircleOutlined className="text-blue-500 text-xl" />
-                <h2 className="text-xl font-semibold text-gray-800 max-[500px]:text-[15px]">
+                <h2 className="font-medium text-gray-700  max-[500px]:text-[15px]">
                   Nima uchun sizni tanlashimiz kerak?
                 </h2>
               </div>
