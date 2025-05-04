@@ -2,14 +2,10 @@ import React from "react";
 import { Button } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import {
-  BulbOutlined,
   CalendarOutlined,
-  EditOutlined,
-  PlayCircleOutlined,
+  ClockCircleOutlined,
   SmileOutlined,
-  TeamOutlined,
   TrophyOutlined,
-  VideoCameraOutlined,
 } from "@ant-design/icons";
 
 import svg1 from "../../assets/svg1.svg";
@@ -22,28 +18,45 @@ function HomePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50">
-      {/* Hero section */}
-      <section className="py-8 md:py-12 px-4 bg-gradient-to-r from-purple-500 to-blue-500 text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-block px-4 md:px-6 py-2 bg-yellow-300 text-purple-800 font-bold rounded-full mb-4 md:mb-6 text-sm md:text-lg shadow-lg">
-            🎉 BEPUL O'QUV OROMGOHI 🎉
+      <section className="py-8 md:py-12 px-4 bg-gradient-to-r from-purple-500 to-blue-500 text-white relative overflow-hidden">
+        {/* Background decoration elements */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-10">
+          <div className="absolute top-10 left-20 w-32 h-32 bg-yellow-300 rounded-full filter blur-xl"></div>
+          <div className="absolute bottom-20 right-20 w-40 h-40 bg-pink-400 rounded-full filter blur-xl"></div>
+        </div>
+
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <div className="inline-flex items-center px-4 md:px-6 py-2 bg-yellow-300 text-purple-800 font-bold rounded-full mb-4 md:mb-6 text-sm md:text-lg shadow-lg max-[420px]:flex max-[380px]:flex-col max-[380px]:gap-2">
+            <div className="flex items-center">
+              <CalendarOutlined className="mr-2" />
+
+              <span>7-9 MAY, 2025</span>
+              <span className="mx-2 block max-[380px]:hidden">•</span>
+            </div>
+            <span>🎉O'QUV OROMGOHI 🎉</span>
           </div>
+
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight">
             <span className="text-yellow-300">Qiziq</span> kontentlar <br />
             qanday tayorlanar ekan?
           </h1>
-          <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 md:p-6 mb-6 md:mb-8 max-w-2xl mx-auto">
-            <p className="text-base md:text-xl font-medium">
+
+          <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 md:p-6 mb-6 md:mb-8 max-w-2xl mx-auto border border-white/30">
+            <p className="text-base md:text-xl font-medium mb-2">
               Milliy qadriyatlar asosida zamonaviy kontent yaratuvchilar uchun
               noyob imkoniyat!
             </p>
+            <div className="inline-flex items-center bg-purple-600/80 px-3 py-1 rounded-full text-sm font-semibold">
+              <ClockCircleOutlined className="mr-1" />
+              <span>2 kunlik intensiv trening</span>
+            </div>
           </div>
+
           <Link to="/register">
             <Button
-              onClick={() => navigate("/register")}
               type="primary"
               size="large"
-              className="bg-yellow-400 hover:bg-yellow-500 text-purple-800 font-bold h-10 md:h-14 px-6 md:px-10 rounded-full text-base md:text-lg shadow-lg border-0 w-full sm:w-auto"
+              className="bg-yellow-400 hover:bg-yellow-500 text-purple-800 font-bold h-10 md:h-14 px-6 md:px-10 rounded-full text-base md:text-lg shadow-lg border-0 w-full sm:w-auto transform hover:scale-105 transition-transform duration-300"
               icon={<SmileOutlined />}
             >
               Ro'yxatdan o'tish
@@ -56,7 +69,7 @@ function HomePage() {
       <section className="py-8 md:py-12 px-4">
         <div className="w-full max-w-[90%] mx-auto">
           <div className=" overflow-hidden">
-          {/* bg-white rounded-2xl shadow-xl */}
+            {/* bg-white rounded-2xl shadow-xl */}
             {/* <div className="bg-gradient-to-r from-blue-400 to-purple-400 p-4 md:p-6 text-white text-center">
               <h2 className="text-2xl md:text-3xl font-bold">Oromgoh haqida</h2>
               <p className="text-lg md:text-xl">
