@@ -12,6 +12,10 @@ import {
   VideoCameraOutlined,
 } from "@ant-design/icons";
 
+import svg1 from "../../assets/svg1.svg";
+import svg2 from "../../assets/svg2.svg";
+import svg3 from "../../assets/svg3.svg";
+import svg4 from "../../assets/svg4.svg";
 function HomePage() {
   const navigate = useNavigate();
   return (
@@ -19,7 +23,7 @@ function HomePage() {
       <section className="py-12 px-4 bg-gradient-to-r from-purple-500 to-blue-500 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-block px-6 py-2 bg-yellow-300 text-purple-800 font-bold rounded-full mb-6 text-lg shadow-lg">
-            🎉 BEPUL O'QUV LAGERI 🎉
+            🎉 BEPUL O'QUV OROMGOHI 🎉
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             <span className="text-yellow-300">Qiziq</span> kontentlar <br />
@@ -46,19 +50,19 @@ function HomePage() {
       </section>
 
       <section className="py-12 px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-[80%] mx-auto">
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
             <div className="bg-gradient-to-r from-blue-400 to-purple-400 p-6 text-white text-center">
-              <h2 className="text-3xl font-bold">Lager haqida</h2>
-              <p className="text-xl">3 kunlik qiziqarli mashg'ulotlar</p>
+              <h2 className="text-3xl font-bold">Oromgoh haqida</h2>
+              <p className="text-xl">2 kunlik qiziqarli mashg'ulotlar</p>
             </div>
 
-            <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="flex items-start">
+            <div className="p-6 w-full flex flex-col gap-[40px] md:grid-cols-2 ">
+              <div className="flex items-center w-full">
                 <div className="bg-yellow-100 p-3 rounded-full mr-4">
                   <CalendarOutlined className="text-yellow-600 text-2xl" />
                 </div>
-                <div>
+                <div className="flex items-center justify-between w-full">
                   <h3 className="text-xl font-bold text-gray-800 mb-2">
                     Qachon bo'ladi?
                   </h3>
@@ -70,32 +74,88 @@ function HomePage() {
                 <div className="bg-blue-100 p-3 rounded-full mr-4">
                   <PlayCircleOutlined className="text-blue-600 text-2xl" />
                 </div>
-                <div>
+                <div className="flex flex-col gap-[40px]">
                   <h3 className="text-xl font-bold text-gray-800 mb-2">
                     Nimalar o'rganamiz?
                   </h3>
-                  <ul className="text-gray-600 text-lg space-y-2">
-                    <li className="flex items-start">
-                      <VideoCameraOutlined className="text-green-500 mr-2 mt-1" />
+
+                  <div className="flex items-center justify-between gap-[30px]">
+                    <div className="shadow-blue-200 shadow-md h-[350px]">
+                      <div>
+                        <img src={svg1} alt="" />
+                      </div>
+                      <p className="  text-center">
+                        Milliy o'yinlarga asoslangan multimedia mahsulotlarini
+                        yaratish
+                      </p>
+                    </div>
+                    <div className="shadow-blue-200 shadow-md h-[350px]">
+                      <div>
+                        <img src={svg2} alt="" />
+                      </div>
+                      <p className="p-2 text-center">
+                        Animatsion video tayyorlash: senariy, dizayn, ovoz va
+                        montaj
+                      </p>
+                    </div>
+                    <div className="shadow-blue-200 shadow-md h-[350px]">
+                      <div>
+                        <img src={svg3} alt="" />
+                      </div>
+                      <p className="p-2 text-center">
+                        Zamonaviy va milliy ruhdagi kreativ kontent ishlab
+                        chiqish texnikalari
+                      </p>
+                    </div>
+
+                    <div className="shadow-blue-200 shadow-md h-[350px]">
+                      <div>
+                        <img src={svg4} alt="" />
+                      </div>
+                      <p className="p-2 text-center">
+                        Amaliy mashg'ulotlar va tajribali mutaxassislar bilan
+                        muloqot
+                      </p>
+                    </div>
+                  </div>
+                  {/* <ul className="text-gray-600 text-lg space-y-2">
+                    <li className="flex items-start gap-2">
+                      <img
+                        className="w-[50px] h-[50px] object-cover"
+                        src={svg1}
+                        alt=""
+                      />
                       Milliy o'yinlarga asoslangan multimedia mahsulotlarini
                       yaratish
                     </li>
                     <li className="flex items-start">
-                      <EditOutlined className="text-blue-500 mr-2 mt-1" />
+                      <img
+                        className="w-[50px] h-[50px] object-cover"
+                        src={svg2}
+                        alt=""
+                      />
                       Animatsion video tayyorlash: senariy, dizayn, ovoz va
                       montaj
                     </li>
                     <li className="flex items-start">
-                      <BulbOutlined className="text-yellow-500 mr-2 mt-1" />
+                      <img
+                        className="w-[50px] h-[50px] object-cover"
+                        src={svg3}
+                        alt=""
+                      />
                       Zamonaviy va milliy ruhdagi kreativ kontent ishlab chiqish
                       texnikalari
                     </li>
                     <li className="flex items-start">
-                      <TeamOutlined className="text-purple-500 mr-2 mt-1" />
+                      <img
+                        className="w-[50px] h-[50px] object-cover"
+                        src={svg4}
+                        alt=""
+                      />
                       Amaliy mashg'ulotlar va tajribali mutaxassislar bilan
                       muloqot
                     </li>
-                  </ul>
+                  </ul> */}
                 </div>
               </div>
             </div>
@@ -111,9 +171,9 @@ function HomePage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
             {[
-              { icon: "🎥", text: "Kontent yaratuvchilar" },
               { icon: "🎨", text: "Dizayner va animatorlar" },
-              { icon: "📷", text: "Bloggerlar, jurnalistlar" },
+              { icon: "📷", text: "Fotograflar" },
+              { icon: "🎥", text: "Kontent yaratuvchilar" },
               { icon: "🏆", text: "Talabalar va ijodkor yoshlar" },
             ].map((item, index) => (
               <div
@@ -125,8 +185,6 @@ function HomePage() {
               </div>
             ))}
           </div>
-
-         
         </div>
       </section>
 
@@ -134,7 +192,7 @@ function HomePage() {
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold mb-6">O'rinlar soni cheklangan!</h2>
           <p className="text-xl mb-8">
-            Tezroq ro'yxatdan o'ting va qiziqarli lagerda o'z o'rningizni band
+            Tezroq ro'yxatdan o'ting va qiziqarli oromgoh o'z o'rningizni band
             qiling!
           </p>
           <Link to="/register">
@@ -164,7 +222,7 @@ function HomePage() {
             ))}
           </div>
           <p className="text-lg">
-            "Milliy Kontent Lager" - Bolalar uchun ijodiy dastur
+            "Milliy Kontent Oromgoh" - Bolalar uchun ijodiy dastur
           </p>
           <p className="text-gray-400 mt-2">
             © {new Date().getFullYear()} Barcha huquqlar himoyalangan
