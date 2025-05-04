@@ -38,7 +38,7 @@ function HomePage() {
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight">
             <span className="text-yellow-300">Qiziq</span> kontentlar <br />
-            qanday tayorlanar ekan?
+            qanday tayyorlanar ekan?
           </h1>
 
           <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 md:p-6 mb-6 md:mb-8 max-w-2xl mx-auto border border-white/30">
