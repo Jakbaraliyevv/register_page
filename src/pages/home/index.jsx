@@ -54,24 +54,25 @@ function HomePage() {
 
       {/* About section */}
       <section className="py-8 md:py-12 px-4">
-        <div className="w-full max-w-6xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-            <div className="bg-gradient-to-r from-blue-400 to-purple-400 p-4 md:p-6 text-white text-center">
+        <div className="w-full max-w-[90%] mx-auto">
+          <div className=" overflow-hidden">
+          {/* bg-white rounded-2xl shadow-xl */}
+            {/* <div className="bg-gradient-to-r from-blue-400 to-purple-400 p-4 md:p-6 text-white text-center">
               <h2 className="text-2xl md:text-3xl font-bold">Oromgoh haqida</h2>
               <p className="text-lg md:text-xl">
                 2 kunlik qiziqarli mashg'ulotlar
               </p>
-            </div>
+            </div> */}
 
             <div className="p-4 md:p-6 flex flex-col gap-8">
               {/* Date info */}
-              <div className="flex items-center w-full text-end">
+              {/* <div className="flex items-center w-full text-end">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full ">
                   <p className="text-gray-600 text-base md:text-lg w-full">
                     📅 7-9 may kunlari
                   </p>
                 </div>
-              </div>
+              </div> */}
 
               {/* What we'll learn */}
               <div className="flex flex-col">
