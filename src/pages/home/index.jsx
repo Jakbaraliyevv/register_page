@@ -81,18 +81,7 @@ function HomePage() {
 
               {/* What we'll learn */}
               <div className="flex flex-col">
-                <div className="flex items-start mb-4">
-                  <div className="flex items-center justify-center w-full">
-                    <div className="flex items-center">
-                      <div className="bg-blue-100 p-2 md:p-3 rounded-full mr-3 md:mr-4 flex-shrink-0">
-                        <PlayCircleOutlined className="text-blue-600 text-xl md:text-2xl" />
-                      </div>
-                      <h3 className="text-lg md:text-xl font-bold text-gray-800">
-                        Nimalar o'rganamiz?
-                      </h3>
-                    </div>
-                  </div>
-                </div>
+                <div className="flex items-start mb-4"></div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-2">
                   {[
