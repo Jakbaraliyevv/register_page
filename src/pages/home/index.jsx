@@ -65,15 +65,9 @@ function HomePage() {
 
             <div className="p-4 md:p-6 flex flex-col gap-8">
               {/* Date info */}
-              <div className="flex items-center w-full">
-                <div className="bg-yellow-100 p-2 md:p-3 rounded-full mr-3 md:mr-4 flex-shrink-0">
-                  <CalendarOutlined className="text-yellow-600 text-xl md:text-2xl" />
-                </div>
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full">
-                  <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-1 sm:mb-0">
-                    Qachon bo'ladi?
-                  </h3>
-                  <p className="text-gray-600 text-base md:text-lg">
+              <div className="flex items-center w-full text-end">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full ">
+                  <p className="text-gray-600 text-base md:text-lg w-full">
                     📅 7-9 may kunlari
                   </p>
                 </div>
