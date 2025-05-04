@@ -312,7 +312,8 @@ function FormComponents() {
       }
 
       const response = await axios.post(
-        "http://195.158.4.220:1212/register/",
+        "https://online.raqamliavlod.uz/register/",
+        // "http://195.158.4.220:1212/register/"
         data,
         {
           headers: {
@@ -323,7 +324,7 @@ function FormComponents() {
 
       if (response?.data?.success) {
         console.log(response?.data, "response");
-        navigate("/succses")
+        navigate("/sucsses");
         message.success("Ro'yxatdan muvaffaqiyatli o'tdingiz!");
         setFormData({
           name: "",
