@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/home/index";
+import Home from "../pages/register";
+import HomePage from "../pages/home";
 import SuccsesComponents from "../components/succses";
-import HomePage from "../pages/register";
 
 const root = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <HomePage />,
   },
   {
     path: "/succses",
@@ -14,7 +14,7 @@ const root = createBrowserRouter([
   },
   {
     path: "/register",
-    element: <HomePage />,
+    element: <Home />,
   },
 ]);
 
