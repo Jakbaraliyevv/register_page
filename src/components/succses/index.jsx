@@ -1,6 +1,7 @@
 import React from "react";
 import { CheckOutlined } from "@ant-design/icons";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import tg from "../../assets/telegram.webp";
 function SuccsesComponents() {
   const navigate = useNavigate();
   return (
@@ -15,11 +16,18 @@ function SuccsesComponents() {
           Ro'yxatdan o'tish muvaffaqiyatli yakunlandi!
         </h2>
         <p className="text-center text-gray-600 mb-6">
-          Sizning arizangiz qabul qilindi. Tez orada siz bilan bog'lanamiz.
+          Natiga Digital Generation Uzbekistan telegram kanalida e'lon qilinadi
         </p>
+        <Link
+          to={"https://t.me/digitalgeneration_uz"}
+          className="flex items-center gap-2"
+        >
+          <img className="w-[20px]" src={tg} alt="" />
+          Telegram
+        </Link>
         <button
           onClick={() => navigate("/")}
-          className="w-full bg-[#b089fb] hover:bg-[#b089fb] text-white py-2 px-4 rounded-md transition duration-300"
+          className="w-full bg-[#b089fb] hover:bg-[#b089fb] text-white py-2 px-4 rounded-md transition duration-300 mt-4"
         >
           Ortga qaytish
         </button>
