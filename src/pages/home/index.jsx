@@ -1,17 +1,13 @@
 import React from "react";
 import { Button } from "antd";
 import { Link, useNavigate } from "react-router-dom";
-import {
-  CalendarOutlined,
-  ClockCircleOutlined,
-  SmileOutlined,
-  TrophyOutlined,
-} from "@ant-design/icons";
+import { CalendarOutlined } from "@ant-design/icons";
 
 import svg1 from "../../assets/svg1.svg";
 import svg2 from "../../assets/svg2.svg";
 import svg3 from "../../assets/svg3.svg";
 import svg4 from "../../assets/svg4.svg";
+import tg from "../../assets/telegram.webp";
 
 function HomePage() {
   const navigate = useNavigate();
@@ -19,7 +15,6 @@ function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-purple-50">
       <section className="py-8 md:py-12 px-4 bg-gradient-to-r from-purple-500 to-blue-500 text-white relative overflow-hidden">
-        {/* Background decoration elements */}
         <div className="absolute top-0 left-0 w-full h-full opacity-10">
           <div className="absolute top-10 left-20 w-32 h-32 bg-yellow-300 rounded-full filter blur-xl"></div>
           <div className="absolute bottom-20 right-20 w-40 h-40 bg-pink-400 rounded-full filter blur-xl"></div>
@@ -36,58 +31,33 @@ function HomePage() {
             <span>🎉O'QUV OROMGOHI 🎉</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 leading-tight">
-            <span className="text-yellow-300">Qiziq</span> kontentlar <br />
-            qanday tayyorlanar ekan?
+          <h1 className="text-2xl sm:text-4xl md:text-4xl font-bold mb-4 md:mb-6 leading-tight">
+            <span className="text-yellow-300">Ro'yxatdan </span>
+            o'tish yakunlandi. Natijalarni Digital Generation Uzbekistan
+            telegram kanalida e'lon qilinadi.
           </h1>
 
-          <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 md:p-6 mb-6 md:mb-8 max-w-2xl mx-auto border border-white/30">
-            <p className="text-base md:text-xl font-medium mb-2">
-              Milliy qadriyatlar asosida zamonaviy kontent yaratuvchilar uchun
-              noyob imkoniyat!
-            </p>
-            <div className="inline-flex items-center bg-purple-600/80 px-3 py-1 rounded-full text-sm font-semibold">
-              <ClockCircleOutlined className="mr-1" />
-              <span>2 kunlik intensiv trening</span>
-            </div>
-          </div>
-
-          <Link to="/register">
+          <Link to={"https://t.me/digitalgeneration_uz"}>
             <Button
               type="primary"
               size="large"
               className="bg-yellow-400 hover:bg-yellow-500 text-purple-800 font-bold h-10 md:h-14 px-6 md:px-10 rounded-full text-base md:text-lg shadow-lg border-0 w-full sm:w-auto transform hover:scale-105 transition-transform duration-300"
-              icon={<SmileOutlined />}
             >
-              Ro'yxatdan o'tish
+              <img className="w-[20px]" src={tg} alt="" />
+              Telegram
             </Button>
           </Link>
+
+          <h1 className="text-yellow-300 text-2xl sm:text-4xl md:text-4xl font-bold mb-4 md:mb-6 leading-tight mt-4">
+            E'tiboringiz uchun raxmat.
+          </h1>
         </div>
       </section>
 
-      {/* About section */}
       <section className="py-8 md:py-12 px-4">
         <div className="w-full max-w-[90%] mx-auto">
           <div className=" overflow-hidden">
-            {/* bg-white rounded-2xl shadow-xl */}
-            {/* <div className="bg-gradient-to-r from-blue-400 to-purple-400 p-4 md:p-6 text-white text-center">
-              <h2 className="text-2xl md:text-3xl font-bold">Oromgoh haqida</h2>
-              <p className="text-lg md:text-xl">
-                2 kunlik qiziqarli mashg'ulotlar
-              </p>
-            </div> */}
-
             <div className="p-4 md:p-6 flex flex-col gap-8">
-              {/* Date info */}
-              {/* <div className="flex items-center w-full text-end">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full ">
-                  <p className="text-gray-600 text-base md:text-lg w-full">
-                    📅 7-9 may kunlari
-                  </p>
-                </div>
-              </div> */}
-
-              {/* What we'll learn */}
               <div className="flex flex-col">
                 <div className="flex items-start mb-4"></div>
 
@@ -133,7 +103,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* For whom section */}
       <section className="py-8 md:py-12 px-4 bg-gradient-to-r from-yellow-100 to-orange-100">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-purple-800 mb-6 md:mb-8">
@@ -161,31 +130,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* CTA section */}
-      <section className="py-10 md:py-16 px-4 bg-gradient-to-b from-purple-600 to-blue-600 text-white text-center">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">
-            O'rinlar soni cheklangan!
-          </h2>
-          <p className="text-base md:text-xl mb-6 md:mb-8">
-            Tezroq ro'yxatdan o'ting va qiziqarli oromgohda o'z o'rningizni band
-            qiling!
-          </p>
-          <Link to="/register">
-            <Button
-              onClick={() => navigate("/register")}
-              type="primary"
-              size="large"
-              className="bg-yellow-400 hover:bg-yellow-500 text-purple-800 font-bold h-10 md:h-14 px-6 md:px-10 rounded-full text-base md:text-lg shadow-lg w-full sm:w-auto"
-              icon={<TrophyOutlined />}
-            >
-              Men ham qatnashmoqchiman!
-            </Button>
-          </Link>
-        </div>
-      </section>
-
-      {/* Footer */}
       <footer className="bg-gray-800 text-white py-6 md:py-8 px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="flex justify-center space-x-4 md:space-x-6 mb-4 md:mb-6">
