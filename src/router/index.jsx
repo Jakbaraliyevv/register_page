@@ -1,27 +1,38 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/register";
 import HomePage from "../pages/home";
-import SuccsesComponents from "../components/succses";
 import StudentTable from "../components/information";
+import Login from "../components/login";
+import NotFound from "../components/not-found";
 
 const root = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
   },
-  // {
-  //   path: "/succses",
-  //   element: <SuccsesComponents />,
-  // },
-  // {
-  //   path: "/register",
-  //   element: <Home />,
-  // },
+
+  {
+    path: "/login",
+    element: <Login />,
+  },
 
   {
     path: "/information",
     element: <StudentTable />,
   },
+
+  {
+    path: "*",
+    element: <NotFound />,
+  },
 ]);
 
 export default root;
+
+// {
+//   path: "/succses",
+//   element: <SuccsesComponents />,
+// },
+// {
+//   path: "/register",
+//   element: <Home />,
+// },
