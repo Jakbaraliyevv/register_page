@@ -9,14 +9,14 @@ const root = createBrowserRouter([
     path: "/",
     element: <HomePage />,
   },
-  {
-    path: "/succses",
-    element: <SuccsesComponents />,
-  },
-  {
-    path: "/register",
-    element: <Home />,
-  },
+  // {
+  //   path: "/succses",
+  //   element: <SuccsesComponents />,
+  // },
+  // {
+  //   path: "/register",
+  //   element: <Home />,
+  // },
 
   {
     path: "/information",
