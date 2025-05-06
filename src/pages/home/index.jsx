@@ -33,7 +33,7 @@ function HomePage() {
 
           <h1 className="text-2xl sm:text-4xl md:text-4xl font-bold mb-4 md:mb-6 leading-tight">
             <span className="text-yellow-300">Ro'yxatdan </span>
-            o'tish yakunlandi. Natijalarni Digital Generation Uzbekistan
+            o'tish yakunlandi. Natijalar Digital Generation Uzbekistan
             telegram kanalida e'lon qilinadi.
           </h1>
 
